@@ -1,17 +1,17 @@
 # Site settings
-title:          Tale
+title:          개발 블로그 테스트
 description:    "Minimal Jekyll theme for storytellers"
-baseurl:        "/tale"
-url:            "https://chesterhow.github.io"
+baseurl:        ""
+url:            "https://sommesommee.github.io"
 
 # Google Analytics
 google_analytics: UA—XXXXXXXX-X
 
 # Author
 author:
-  name:         Chester How
-  url:          https://chester.how
-  email:        chesterhow@gmail.com
+  name:         sommesommee
+  url:          https://sommesommee.github.io
+  email:        sommesommee@gmail.com
 
 # Build settings
 markdown:       kramdown
