@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Mac M3 에서 ruby & jekyll 설치"
+title: "MAC M3 에서 Ruby & Jekyll 설치"
 author: "Sommesommee"
 tags: mac
 comments: false
@@ -146,6 +146,6 @@ bundle exec jekyll serve
 
 그동안 윈도우 기반으로 주로 개발을 진행하였다보니 처음 Mac 에 Java 를 설치할 때 헤맨 기억처럼 Ruby 를 설치하는 과정 또한 쉽지 않았습니다.
 
-위 포스팅과 같이 해결은 하였지만 명확하게 왜 해결되었다에 대해선 명쾌하게 해석되진 않으나 유추해볼만한 것은 `--with-openssl-dir=$(brew --prefix openssl)` 와 같이 "패키지 빌드 시 올바른 라이브러리를 참조하였기 때문이지 않을까"가 저의 예상이며, 이 부분은 좀 더 검증해볼 필요가 있습니다.
+위 포스팅과 같이 해결은 하였지만 명확하게 왜 해결되었다에 대해선 명쾌하게 해석되진 않으나 유추해볼만한 것은 `--with-openssl-dir=$(brew --prefix openssl)` 와 같이 "Ruby 패키지 빌드 시 올바른 라이브러리를 참조하도록 옵션을 설정했기 때문이 아닐까"가 저의 예상이며, 이 부분은 좀 더 검증해볼 필요가 있습니다.
 
 위 시행착오 과정에서 제가 경험했던 과정을 누군가는 좀더 수월하게 경험하였으면 합니다.
