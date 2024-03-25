@@ -2,7 +2,7 @@
 layout: post
 title: "MAC M3 에서 Ruby & Jekyll 설치"
 author: "Sommesommee"
-tags: mac
+tags: devops mac
 comments: false
 excerpt_separator: <!--more-->
 sticky: false
@@ -15,7 +15,7 @@ hidden: false
 >
 > Jekyll은 Markdown, HTML, CSS 및 Liquid 템플릿 엔진과 같은 간단한 마크업 언어를 사용하여 웹사이트를 만들 수 있게 해줍니다.
 >
-> Jekyll 은 Ruby 언어를 기반으로 개발된 오픈소스 프로젝트이기하 때문에 Jekyll 을 사용하려면 반드시 Ruby 의 사전 설치가 필요합니다.
+> Jekyll 은 Ruby 언어를 기반으로 개발된 오픈소스 프로젝트이기 때문에 Jekyll 을 사용하려면 반드시 Ruby 의 사전 설치가 필요합니다.
 >
 > 처음엔 단순히 "Homebrew 로 간단히 설치해야지" 라고 생각했었는데 생각보다 그 셋팅 과정이 쉽진 않았습니다.
 >
