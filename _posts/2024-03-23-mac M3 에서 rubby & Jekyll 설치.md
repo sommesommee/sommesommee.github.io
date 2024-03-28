@@ -9,7 +9,7 @@ sticky: false
 hidden: false
 ---
 
-> 이 글은 저의 개인 Mac Pro M3 환경 상에서 ruby 를 설치하는 과정을 남긴 포스팅 입니다.
+> 이 글은 저의 개인 Mac M3 환경 상에서 ruby 를 설치하는 과정을 남긴 포스팅 입니다.
 >
 > 처음 Mac 환경에 Ruby 를 설치하게 된 계기는 Jekyll 을 사용한 Github 블로그를 운영하기 위해서 였습니다.
 >
@@ -34,7 +34,7 @@ Homebrew 를 활용하여 Ruby 의 설치는 매우 쉽게 가능 합니다.
 Homebrew 를 통한 Ruby 설치를 위해 아래와 같이 명령어를 입력 하였습니다.
 
 ```bash
-## 이 명령은 최신 버전의 Ruby를 설치합니다. 
+## 이 명령은 최신 버전의 Ruby 를 설치합니다. 
 
 brew install ruby
 ```
@@ -46,7 +46,7 @@ Jekyll은 Ruby 기반으로 Markdown 이나 HTML 과 같은 간단한 마크업 
 bundler는 Ruby 프로젝트에서 필요한 모든 gem 을 관리하고 프로젝트에 필요한 정확한 버전의 gem 을 설치하는 데 사용됩니다.
 
 ```bash
-## 이 명령은 최신 버전의 jekyll와 bundler을 설치합니다.
+## 이 명령은 최신 버전의 jekyll 와 bundler 을 설치합니다.
 
 gem install jekyll bundler
 ```
@@ -64,11 +64,7 @@ ERROR:  While executing gem ... (Gem::Exception)
 	...(이하 생략)...
 ```
 
-아무래도 Ruby를 Homebrew로 설치하였을 때 Ruby의 컴파일 과정 중 알 수 없는 이유에 의해 시스템 환경설정이나 Ruby 빌드 구성 등의 문제로 정상적으로 Ruby 가 빌드되지 않은 듯 합니다.
-
-저는 위 문제를 해결하기 위해 구글링  시도 중 RVM 을 활용해 설치하는 방법을 찾았고 아래 링크의 글을 참고하여 Homebrew 가 아닌 RVM 을 활용한 Ruby 설치를 시도하기로 결정 하였습니다.
-
-[https://github.com/rvm/rvm/issues/5365](https://github.com/rvm/rvm/issues/5365)
+아무래도 Ruby 를 Homebrew 로 설치하였을 때 Ruby 의 컴파일 과정 중 알 수 없는 이유에 의해 시스템 환경설정이나 Ruby 빌드 구성 등의 문제로 정상적으로 Ruby 가 빌드되지 않은 듯 합니다.
 
 <br/>
 
@@ -76,7 +72,11 @@ ERROR:  While executing gem ... (Gem::Exception)
 
 ## 두번째 시도 : RVM (Ruby Version Manager) 을 사용하여 Ruby 설치
 
-아래 명령어를 실행하여 RVM을 설치합니다.
+저는 위 문제를 해결하기 위해 구글링  시도 중 RVM 을 활용해 설치하는 방법을 찾았고 아래 링크의 글을 참고하여 Homebrew 가 아닌 RVM 을 활용한 Ruby 설치를 시도하기로 결정 하였습니다.
+
+[https://github.com/rvm/rvm/issues/5365](https://github.com/rvm/rvm/issues/5365)
+
+아래 명령어를 실행하여 RVM 을 설치합니다.
 
 ```
 \curl -sSL https://get.rvm.io | bash -s stable
@@ -100,7 +100,7 @@ source ~/.rvm/scripts/rvm
 rvm --version
 ```
 
-RVM 이 설치가 완료되면 아래와 같은 명령어를 통해 Ruby 3.2.2 버전의 설치가 가능합니다.
+RVM 이 설치가 완료되면 위 Github 에서 소개한 아래와 같은 명령어를 통해 Ruby 3.2.2 버전의 설치가 가능합니다.
 
 ```bash
 rvm reinstall 3.2.2 --with-openssl-dir=$(brew --prefix openssl) --with-readline-dir=$(brew --prefix readline) --with-libyaml-dir=$(brew --prefix libyaml) --disable-dtrace --disable-docs
@@ -115,7 +115,7 @@ ruby --version
 이제 다시 jekyll & bundle 설치를 시도합니다.
 
 ```bash
-## 이 명령은 최신 버전의 jekyll와 bundler을 설치합니다.
+## 이 명령은 최신 버전의 jekyll 와 bundler 을 설치합니다.
 
 gem install jekyll bundler
 ```
@@ -123,10 +123,22 @@ gem install jekyll bundler
 설치가 완료된 후 이제 정상적으로  jekyll 사용이 가능합니다.
 
 ```bash
-## Bundler를 사용하여 프로젝트의 종속성을 관리하고, 이 종속성에 포함된 Jekyll을 실행하여 로컬 웹서버를 시작하는 명령입니다.
+## Bundler를 사용하여 프로젝트의 종속성을 관리하고, 이 종속성에 포함된 Jekyll 을 실행하여 로컬 웹서버를 시작하는 명령입니다.
 
 bundle exec jekyll serve
 ```
+
+두번째 방법과 첫번째 방법을 비교해본다면 아마도 Ruby 의 빌드 과정 중 정상적인  OpenSSL 경로를 참조하지 못하지 않았을까 싶습니다.
+
+관련하여 구글링을 좀더 진행해보았고 아래 포스팅과 같이 저와 유사한 방식으로 해결한 사례를 찾아볼 수 있었습니다.
+
+https://leesh90.github.io/environment/2021/04/03/openssl-install/
+
+<br/>
+
+<br/>
+
+## 세번째 시도 : 다시 Homebrew 를 사용하여 Ruby & Jekyll 설치
 
 <br/>
 
@@ -138,10 +150,8 @@ bundle exec jekyll serve
 
 ## 맺음말
 
-그동안 윈도우 기반으로 주로 개발을 진행하였다보니 처음 Mac 에 Java 를 설치할 때 헤맨 기억처럼 Ruby 를 설치하는 과정 또한 쉽지 않았습니다.
+위 포스팅 내용과 같이 저는 RVM 통하여 Jekyll 설치 이슈를 해결 하였지만 Homebrew 는 안되고 RVM 은 된다의 문제는 아닐 것입니다.
 
-위 포스팅과 같이 RVM 통하여 해결 하였지만 Homebrew 는 안되고 RVM 은 된다의 문제는 아닐 것입니다.
+아마도  `--with-openssl-dir=$(brew --prefix openssl)` 와 같은 설정을 통해 "Ruby 컴파일 시 올바른 라이브러리를 참조하도록 옵션을 설정했기 때문이 아닐까"가 저의 예상이며, 이 부분은 Homebrew 로 Ruby 를 다시 놀고있는 다른 MAC에 설치해보며 좀 더 검증해볼 필요가 있습니다.
 
-아마도  `--with-openssl-dir=$(brew --prefix openssl)` 와 같이 "Ruby 컴파일 시 올바른 라이브러리를 참조하도록 옵션을 설정했기 때문이 아닐까"가 저의 예상이며, 이 부분은 Homebrew 로 Ruby 를 다시 설치해보며 좀 더 검증해볼 필요가 있습니다.
-
-위 시행착오 과정에서 제가 경험했던 과정을 누군가는 좀더 수월하게 경험하였으면 합니다.
+그리고 위 시행착오 과정에서 제가 경험했던 과정을 누군가는 좀더 수월하게 경험하였으면 합니다.
