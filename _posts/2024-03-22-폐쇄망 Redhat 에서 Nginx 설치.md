@@ -27,7 +27,7 @@ hidden: false
 
 [https://nginx.org/en/download.htmll](https://nginx.org/en/download.html)
 
-제 로컬 PC 에서 다운받은 파일명은 `nginx-1.24.0.tar ` 입니다.
+제 로컬 PC 에서 다운받은 파일명은 `nginx-1.24.0.tar` 입니다.
 
 이제 이 파일을 이터넷망에서 폐쇄망으로 옮길 수 있는 사내 정식 절차를 통해 폐쇄망으로 이관해 줍니다.
 
@@ -61,7 +61,7 @@ nginx-1.24.0  nginx-1.24.0.tar.gz
 
 [https://github.com/openresty/headers-more-nginx-module/tags](https://github.com/openresty/headers-more-nginx-module/tags)
 
-제 로컬 PC 에서 다운받은 파일명은 ` headers-more-nginx-module-0.37.tar` 입니다.
+제 로컬 PC 에서 다운받은 파일명은 `headers-more-nginx-module-0.37.tar` 입니다.
 
 다시 동일한 과정을 거쳐 압축 해제까지 진행해 줍니다.
 
@@ -154,7 +154,7 @@ $ ./nginx
 
 그리고 응답 header 상에서 서버 정보가 None 으로 표시되고 있는지 확인해 봅니다.
 
-![대체 텍스트](../_images/image_20240330.png)
+![대체 텍스트](https://github.com/sommesommee/sommesommee.github.io/blob/master/_images/image_20240330.png?raw=true)
 
 <br/>
 
