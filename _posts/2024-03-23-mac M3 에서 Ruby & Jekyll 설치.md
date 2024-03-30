@@ -128,17 +128,11 @@ gem install jekyll bundler
 bundle exec jekyll serve
 ```
 
-두번째 방법과 첫번째 방법을 비교해본다면 아마도 Ruby 의 빌드 과정 중 정상적인  OpenSSL 경로를 참조하지 못하지 않았을까 싶습니다.
+두번째 방법과 첫번째 방법을 비교해본다면 아마도 Ruby 의 빌드 과정 중 필요한 기타 패키지의 경로를 참조하지 못하지 않았을까 싶습니다.
 
 관련하여 구글링을 좀더 진행해보았고 아래 포스팅과 같이 저와 유사한 방식으로 해결한 사례를 찾아볼 수 있었습니다.
 
 https://leesh90.github.io/environment/2021/04/03/openssl-install/
-
-<br/>
-
-<br/>
-
-## 세번째 시도 : 다시 Homebrew 를 사용하여 Ruby & Jekyll 설치
 
 <br/>
 
@@ -152,6 +146,12 @@ https://leesh90.github.io/environment/2021/04/03/openssl-install/
 
 위 포스팅 내용과 같이 저는 RVM 통하여 Jekyll 설치 이슈를 해결 하였지만 Homebrew 는 안되고 RVM 은 된다의 문제는 아닐 것입니다.
 
-아마도  `--with-openssl-dir=$(brew --prefix openssl)` 와 같은 설정을 통해 "Ruby 컴파일 시 올바른 라이브러리를 참조하도록 옵션을 설정했기 때문이 아닐까"가 저의 예상이며, 이 부분은 Homebrew 로 Ruby 를 다시 놀고있는 다른 MAC에 설치해보며 좀 더 검증해볼 필요가 있습니다.
+아마도  `--with-openssl-dir=$(brew --prefix openssl)` 와 같은 설정을 통해 "Ruby 컴파일 시 올바른 라이브러리를 참조하도록 옵션을 설정했기 때문이 아닐까"가 저의 예상이며, Java 를 설치할 때에도 느꼈지만 Homebrew 로 설치한다는 것은 생각보다 마냥 편하지 않다는 느낌을 받았습니다.
+
+Jekell 공식 홈페이지에서는 아래 링크와 같이 Chruby 를 통한 Ruby 와 Jekyll 의 설치를 권장하는 만큼 왠만하면 저처럼 버전관리자를 활용하여 설치하시는 것을 가급적이면 추천 드립니다.
+
+[https://jekyllrb.com/docs/installation/macos/](https://jekyllrb.com/docs/installation/macos/)
+
+그리고 아직 Homebrew 에 대한 이해도가 낮은 만큼 좀 더 이 부분에 대해 경험해보며 무엇이 문제인지 고민해보도록 하겠으며, 새로 이해한 내용이 있다면 이 글을 업데이트하거나 연재글로 링크를 걸 수 있도록 하겠습니다.
 
 그리고 위 시행착오 과정에서 제가 경험했던 과정을 누군가는 좀더 수월하게 경험하였으면 합니다.
