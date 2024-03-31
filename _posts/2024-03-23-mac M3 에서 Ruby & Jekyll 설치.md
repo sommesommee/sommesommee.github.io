@@ -11,15 +11,6 @@ hidden: false
 
 > 이 글은 저의 개인 Mac M3 환경 상에서 ruby 를 설치하는 과정을 남긴 포스팅 입니다.
 >
-> 처음 Mac 환경에 Ruby 를 설치하게 된 계기는 Jekyll 을 사용한 Github 블로그를 운영하기 위해서 였습니다.
->
-> Jekyll은 Markdown, HTML, CSS 및 Liquid 템플릿 엔진과 같은 간단한 마크업 언어를 사용하여 웹사이트를 만들 수 있게 해줍니다.
->
-> Jekyll 은 Ruby 언어를 기반으로 개발된 오픈소스 프로젝트이기 때문에 Jekyll 을 사용하려면 반드시 Ruby 의 사전 설치가 필요합니다.
->
-> 처음엔 단순히 "Homebrew 로 간단히 설치해야지" 라고 생각했었는데 생각보다 그 셋팅 과정이 쉽진 않았습니다.
->
-> 때문에 제가 설치해온 경험을 아래와 같이 포스팅하여 작성하오니 누군가에겐 이 글이 도움이 되었으면 합니다.
 
 <br/>
 
@@ -146,7 +137,7 @@ https://leesh90.github.io/environment/2021/04/03/openssl-install/
 
 위 포스팅 내용과 같이 저는 RVM 통하여 Jekyll 설치 이슈를 해결 하였지만 Homebrew 는 안되고 RVM 은 된다의 문제는 아닐 것입니다.
 
-아마도  `--with-openssl-dir=$(brew --prefix openssl)` 와 같은 설정을 통해 "Ruby 컴파일 시 올바른 라이브러리를 참조하도록 옵션을 설정했기 때문이 아닐까"가 저의 예상이며, Java 를 설치할 때에도 느꼈지만 Homebrew 로 설치한다는 것은 생각보다 마냥 편하지 않다는 느낌을 받았습니다.
+아마도  `--with-openssl-dir=$(brew --prefix openssl)` 와 같은 설정을 통해 "Ruby 컴파일 시 올바른 라이브러리를 참조하도록 옵션을 설정했기 때문이 아닐까"가 저의 예상 입니다.
 
 Jekell 공식 홈페이지에서는 아래 링크와 같이 Chruby 를 통한 Ruby 와 Jekyll 의 설치를 권장하는 만큼 왠만하면 저처럼 버전관리자를 활용하여 설치하시는 것을 가급적이면 추천 드립니다.
 
