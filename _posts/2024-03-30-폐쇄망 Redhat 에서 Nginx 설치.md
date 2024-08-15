@@ -37,6 +37,8 @@ hidden: false
 
 마지막으로 다운받은 파일의 압축을 해제해 줍니다.
 
+<br/>
+
 ```bash
 $ tar -xvf path/to/nginx-1.24.0.tar
 $ ls
@@ -65,6 +67,8 @@ nginx-1.24.0  nginx-1.24.0.tar.gz
 
 다시 동일한 과정을 거쳐 압축 해제까지 진행해 줍니다.
 
+<br/>
+
  ```bash
  $ tar -xvf path/to/headers-more-nginx-module-0.37.tar
  $ ls
@@ -87,16 +91,24 @@ Nginx 를 빌드하기 전에 configure 명령어를 사용하여 빌드 옵션�
 
 이를 통해 시스템 전역에 영향을 미치지 않고 특정 디렉토리에 소프트웨어를 설치할 수 있습니다.
 
+<br/>
+
 ```bash
 $ cd path/to/nginx-1.24.0
 $ ./configure --add-module=/path/to/headers-more-nginx-module-0.37 --prefix=/path/to/install
 ```
 
+<br/>
+
 다음으로 configure 명령어를 실행한 후에는 make 명령어를 사용하여 Nginx 를 빌드합니다.
+
+<br/>
 
 ```
 make
 ```
+
+<br/>
 
 마지막으로 make install 명령어를 사용하여 빌드된 Nginx 를 시스템에 설치합니다.
 
@@ -119,6 +131,8 @@ conf  html  logs  sbin
 
 우선 nginx.conf 설정 파일 위치를 탐색해 봅니다.
 
+<br/>
+
 ```bash
 $ cd /path/to/install/conf
 $ ls
@@ -127,7 +141,11 @@ fastcgi.conf.default  koi-utf                 mime.types.default  scgi_params   
 fastcgi_params        koi-win                 nginx.conf          scgi_params.default  win-utf
 ```
 
+<br/>
+
 이제 nginx.conf 설정 파일 상에 headers-more-nginx-module 관련 설정을 추가하여 서버 정보를 응답 헤더상에서 제외해 보겠습니다.
+
+<br/>
 
 ```bash
 ...
@@ -143,7 +161,11 @@ http {
 ...
 ```
 
+<br/>
+
 이제 서비스를 실행해보겠습니다.
+
+<br/>
 
 ```bash
 $ cd /path/to/install/bin

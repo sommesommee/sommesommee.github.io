@@ -26,11 +26,11 @@ hidden: false
 
 저는 인터넷망에 접근 가능한 로컬 PC 에서 구글링 통해 아래 Redis 공식 홈페이지에서 제공하는 다운로드 링크에 접근하였고 설치할 OS와 호환되는 Redis 5.0.9 을 다운 받았습니다.
 
-
+<br/>
 
 [http://download.redis.io/releases](http://download.redis.io/releases)
 
-
+<br/>
 
 제 로컬 PC에서 다운받은 파일명은 `redis-5.0.9.tar.gz` 입니다.
 
@@ -103,24 +103,49 @@ $ make -PREFIX=/websvc/redis-5.0.9 install
 
 <br/>
 
-![image_20240709_002.png](https://github.com/sommesommee/sommesommee.github.io/blob/master/_images/image_20240709_002.png)
+```bash
+$ cd /websvc/redis-5.0.9/bin
+$ ls
+redis-benchmark	redis-check-aof	redis-check-rdb	redis-cli	redis-sentinel	redis-server
+```
 
 <br/>
 
-최종적으로 prefix 옵션으로 지정한 경로에  Redis 의 홈폴더가 구성되었음을 확인할 수 있습니다.
+최종적으로 prefix 옵션으로 지정한 경로의 bin 폴더에  Redis 의 홈폴더가 구성되었음을 확인할 수 있습니다.
 
 <br/>
 <br/>
 
-## Redis 의 실행 및 종료
+## Redis 의 실행
 
-이제 설치된 Redis 를 실행 보겠습니다.
+이제 설치된 Redis 를 별도의 설정과정없이 그대로 실행 보겠습니다.
 
-참고로 Redis 의 기본 포트는 `6379` 입니다. 따라서 해당 포트와 겹치는 서비스가 실행하려고하는 서버 또는 로컬 PC 상에 존재하지 않아야 합니다.
+참고로 Redis 의 기본 포트는 `6379` 이므로 기존 서비스 중 6379 포트를 사용하는 서비스가 없어야 합니다.
 
-//실행 후 ps -ef|grep 한 화면...
+<br/>
 
-이후 포스팅에서는 Redis.conf 중심으로 주요한 설정을 편집해보겠습니다.
+```bash
+$ ./redis-server
+( redis 실행 진행중... )
+```
+
+<br/>
+
+![image_20240709_002.png](https://raw.githubusercontent.com/sommesommee/sommesommee.github.io/master/_images/image_20240709_002.png)
+
+<br/>
+
+위와같이 정상적으로 레디스 실행이 완료된 것을 확인할 수 있습니다.
+
+현재 실행한 Redis는 redis.conf 상 `daemonize` 옵션을 설정하지 않았으므로 기본값인 no 로 실행되어 쉘이 종료되면 Redis 도 종료 됩니다.
+
+<br/>
+
+![image_20240709_003.png](https://raw.githubusercontent.com/sommesommee/sommesommee.github.io/master/_images/image_20240709_003.png)
+
+</br>
+
+이후 포스팅에서는 redis.conf 중심으로 편집하며 제가 사용한 주요 설정을 소개하겠습니다.
 
 <br/>
 <br/>
