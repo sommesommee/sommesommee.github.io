@@ -2,7 +2,7 @@
 layout: post
 title: "폐쇄망 Redhat 에서 Redis 설치"
 author: "Sommesommee"
-tags: devops
+tags: devops redis
 comments: false
 excerpt_separator: <!--more-->
 sticky: false
