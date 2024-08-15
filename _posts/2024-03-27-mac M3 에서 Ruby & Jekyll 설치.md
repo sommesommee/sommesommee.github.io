@@ -24,11 +24,15 @@ Homebrew 를 활용하여 Ruby 의 설치는 매우 쉽게 가능 합니다.
 
 Homebrew 를 통한 Ruby 설치를 위해 아래와 같이 명령어를 입력 하였습니다.
 
+<br/>
+
 ```bash
 ## 이 명령은 최신 버전의 Ruby 를 설치합니다. 
 
 brew install ruby
 ```
+
+<br/>
 
 성공적으로 루비가 설치되고 나는 설치된 Ruby 와 함께 설치된 RubyGems 라는 Ruby 패키지 관리 시스템을 활용하여 jekyll & bundler 설치를 시도하였습니다.
 
@@ -36,15 +40,21 @@ Jekyll은 Ruby 기반으로 Markdown 이나 HTML 과 같은 간단한 마크업 
 
 bundler는 Ruby 프로젝트에서 필요한 모든 gem 을 관리하고 프로젝트에 필요한 정확한 버전의 gem 을 설치하는 데 사용됩니다.
 
+<br/>
+
 ```bash
 ## 이 명령은 최신 버전의 jekyll 와 bundler 을 설치합니다.
 
 gem install jekyll bundler
 ```
 
+<br/>
+
 하지만 위 과정에서 정상적으로 설치가 되지 않았습니다.
 
 설치되지 않은 사유는  아래 에러 메세지와 같은 openssl 관련 패키지 이슈 였습니다.
+
+<br/>
 
 ```bash
 % gem install jekyll bundler
@@ -69,17 +79,25 @@ ERROR:  While executing gem ... (Gem::Exception)
 
 아래 명령어를 실행하여 RVM 을 설치합니다.
 
+<br/>
+
 ```
 \curl -sSL https://get.rvm.io | bash -s stable
 ```
+
+<br/>
 
 설치가 완료되면 RVM 을 초기화해야 합니다.
 
 아래 명령어를 실행하여 터미널에서 RVM 을 사용할 수 있도록 환경을 설정합니다.
 
+<br/>
+
 ```
 source ~/.rvm/scripts/rvm
 ```
+
+<br/>
 
 이제 RVM 이 성공적으로 설치되었고 활성화되었습니다.
 
@@ -87,11 +105,17 @@ source ~/.rvm/scripts/rvm
 
 아래 명령어를 실행하여 RVM 이 제대로 설치되었는지 확인합니다.
 
+<br/>
+
 ```bash
 rvm --version
 ```
 
+<br/>
+
 RVM 이 설치가 완료되면 위 Github 에서 소개한 아래와 같은 명령어를 통해 Ruby 3.2.2 버전의 설치가 가능합니다.
+
+<br/>
 
 ```bash
 rvm reinstall 3.2.2 --with-openssl-dir=$(brew --prefix openssl) --with-readline-dir=$(brew --prefix readline) --with-libyaml-dir=$(brew --prefix libyaml) --disable-dtrace --disable-docs
@@ -99,11 +123,17 @@ rvm reinstall 3.2.2 --with-openssl-dir=$(brew --prefix openssl) --with-readline-
 
 Ruby 설치가 완료되면 아래와 같은 명령어를 통해 Ruby 가 정상적으로 설치되었는지 확인 가능합니다.
 
+<br/>
+
 ```bash
 ruby --version
 ```
 
+<br/>
+
 이제 다시 jekyll & bundle 설치를 시도합니다.
+
+<br/>
 
 ```bash
 ## 이 명령은 최신 버전의 jekyll 와 bundler 을 설치합니다.
@@ -111,7 +141,11 @@ ruby --version
 gem install jekyll bundler
 ```
 
+<br/>
+
 설치가 완료된 후 이제 정상적으로  jekyll 사용이 가능합니다.
+
+<br/>
 
 ```bash
 ## Bundler를 사용하여 프로젝트의 종속성을 관리하고, 이 종속성에 포함된 Jekyll 을 실행하여 로컬 웹서버를 시작하는 명령입니다.
@@ -119,9 +153,13 @@ gem install jekyll bundler
 bundle exec jekyll serve
 ```
 
+<br/>
+
 두번째 방법과 첫번째 방법을 비교해본다면 아마도 Ruby 의 빌드 과정 중 필요한 기타 패키지의 경로를 참조하지 못하지 않았을까 싶습니다.
 
 관련하여 구글링을 좀더 진행해보았고 아래 포스팅과 같이 저와 유사한 방식으로 해결한 사례를 찾아볼 수 있었습니다.
+
+<br/>
 
 https://leesh90.github.io/environment/2021/04/03/openssl-install/
 

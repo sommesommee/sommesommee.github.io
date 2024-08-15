@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "폐쇄망 Redhat 에서 Redis 설치"
-author: "Sommes
-ommee"
+author: "Sommesommee"
 tags: devops
 comments: false
 excerpt_separator: <!--more-->
@@ -21,8 +20,6 @@ hidden: false
 <!--more-->
 
 ## Redis 다운로드 및 내부망 이관
-
-이 포스팅은 이전 Nginx 설치와 동일하게 패키지 관리자를 활용한 설치가 불가능한 폐쇄망 환경에서 진행하였습니다.
 
 저는 인터넷망에 접근 가능한 로컬 PC 에서 구글링 통해 아래 Redis 공식 홈페이지에서 제공하는 다운로드 링크에 접근하였고 설치할 OS와 호환되는 Redis 5.0.9 을 다운 받았습니다.
 
@@ -106,7 +103,7 @@ $ make -PREFIX=/websvc/redis-5.0.9 install
 ```bash
 $ cd /websvc/redis-5.0.9/bin
 $ ls
-redis-benchmark	redis-check-aof	redis-check-rdb	redis-cli	redis-sentinel	redis-server
+redis-benchmark  redis-check-aof  redis-check-rdb  redis-cli  redis-sentinel  redis-server
 ```
 
 <br/>
@@ -135,17 +132,35 @@ $ ./redis-server
 
 <br/>
 
-위와같이 정상적으로 레디스 실행이 완료된 것을 확인할 수 있습니다.
+위와같이 정상적으로 레디스가 `stand alone mode` 로 실행이 완료된 것을 확인할 수 있습니다. (위 스크린샷을 자세히 보면 각종 경고 메세지가 보입니다. 이는 제 테스트 환경 이슈이니 무시하셔도 됩니다.)
 
-현재 실행한 Redis는 redis.conf 상 `daemonize` 옵션을 설정하지 않았으므로 기본값인 no 로 실행되어 쉘이 종료되면 Redis 도 종료 됩니다.
+현재 실행한 Redis는 `redis.conf` 상 `daemonize` 옵션을 설정하지 않았으므로 `damonize` 옵션이 꺼져있는 상태 입니다.
+
+때문에 Redis 는 백그라운드에서 실행되지 않고 현재 터미널 세션에 종속됩니다.
+
+따라서 터미널 창을 닫거나 세션을 종료하면 쉘이 종료되면 아래와 같이 Redis 도 종료 됩니다.
 
 <br/>
 
 ![image_20240709_003.png](https://raw.githubusercontent.com/sommesommee/sommesommee.github.io/master/_images/image_20240709_003.png)
 
-</br>
+<br/>
 
-이후 포스팅에서는 redis.conf 중심으로 편집하며 제가 사용한 주요 설정을 소개하겠습니다.
+<br/>
+
+<br/>
+
+<br/>
+
+## 맺음말
+
+지금까지 폐쇄망 Redhat 에서 Redis 설치 및 실행까지 진행해보았습니다.
+
+하지만 실제 운영환경에 도입하기 위해선 장애복구부터 메모리 등 많은 점을 고려하여야 합니다.
+
+이대로 Redis 를 운영환경에 적용하기엔 커스텀하여야 할 필수 설정들이 너무나도 많습니다.
+
+이후 이어지는 Redis 관련 포스팅에서는 `redis.conf` 상에 커스텀 가능한 제가 사용한 주요 설정을 소개하겠습니다.
 
 <br/>
 <br/>
