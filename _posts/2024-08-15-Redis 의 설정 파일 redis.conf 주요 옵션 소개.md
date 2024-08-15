@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Redis 의 설정 파일 redis.conf 커스텀"
+title: "Redis 의 설정 파일 redis.conf 주요 옵션 소개"
 author: "Sommesommee"
 tags: devops redis
 comments: false
