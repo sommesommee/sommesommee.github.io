@@ -121,6 +121,22 @@ redis.conf 파일의 `loglevel` 설정은 Redis 서버의 로그 레벨을 설�
 
 <br/>
 
+## dir : 데이터 파일 저장 디렉터리 지정
+
+redis.conf 파일의 `dir` 설정은 Redis 서버가 생성하는 모든 파일의 기본 저장 위치를 지정합니다.
+
+이는 일관된 디렉터리를 사용하여 Redis 서버가 재실행될 때 같은 파일을 일관되게 바라볼 수 있도록 도움을 줍니다.
+
+위 설정은redis.conf 파일 상 아래와 같이 존재합니다.
+
+<br/>
+
+![image_20240815_014.png](https://raw.githubusercontent.com/sommesommee/sommesommee.github.io/master/_images/image_20240815_014.png)
+
+<br/>
+
+<br/>
+
 ## tcp-backlog : 대기 연결 요청 최대 수 설정
 
 redis.conf 파일의 `tcp-backlog` 설정은 Redis 서버가 수용할 수 있는 대기 중인 연결 요청의 최대 수를 설정합니다.
