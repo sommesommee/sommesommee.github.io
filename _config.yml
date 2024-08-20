@@ -1,6 +1,6 @@
 # Site settings
 title:          Sommesommee's dev blog
-description:    "Minimal Jekyll theme for storytellers"
+description:    "경험한 것을 기록하는 개발 블로그"
 baseurl:        ""
 url:            "https://sommesommee.github.io"
 

@@ -311,6 +311,20 @@ redis.conf 파일의 `cluster-node-timeout` 설정은 클러스터된 노드 간
 
 <br/>
 
+## cluster-require-full-coverage : 클러스터 Slave 자동 승격 설정
+
+Redis.conf 파일의 `cluster-require-full-coverage` 설정은  클러스터에서 마스터 노드의 Failover 처리를 위해 해당 마스터의 레플리카 중 하나가 자동으로 마스터로의 승격을 허용할지 설정합니다. no 가 기본값이며 no 로 설정된 노드만 자동 승격이 가능합니다.
+
+위 설정은 redis.conf 파일 상 아래와 같이 존재합니다.
+
+<br/>
+
+![image_20240815_015.png](https://raw.githubusercontent.com/sommesommee/sommesommee.github.io/master/_images/image_20240815_015.png)
+
+<br/>
+
+<br/>
+
 <br/>
 
 <br/>
